@@ -26,5 +26,10 @@ pipeline {
                 }
             }
         }
+        stage('Sonar'){
+        	steps {
+        		sh 'mvn verify sonar:sonar -Dsonar.projectKey=javigon258_m3-01-maven-clase -Dsonar.organization=javigon258 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=b474eb80d4c50bb5e94216e82c70e26f3ed85206 -Dsonar.branch.name=master'
+        	}
+        }
     }
 }
